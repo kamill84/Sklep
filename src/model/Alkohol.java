@@ -23,5 +23,8 @@ public class Alkohol extends Produkt {  // dziedziczenie z klasy Produkt
 public String getTyp(){
         return "alko";
 }
+    public  String toString(){
+        return super.toString() + "\t"+this.litraz + "\t" + this.procentAlkoholu+"\t";
 
+    }
 }

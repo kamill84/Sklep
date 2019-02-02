@@ -22,4 +22,10 @@ public class Papierosy  extends Produkt {
     public String getTyp(){
         return "papierosy";
     }
+
+
+    public  String toString(){
+        return super.toString() + "\t"+this.rodzaj + "\t" + this.ilosc+"\t";
+
+    }
 }

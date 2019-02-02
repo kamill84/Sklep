@@ -7,9 +7,9 @@ public abstract class Produkt {
 
     private static  int generator=1;  // jedna zmienna w klasie dla wszystkich w klasie
 
-    private int id;
-    private String nazwa;
-    private BigDecimal cena;
+    protected int id;  // protected znaczy ze bedzie widzocze w klasach papierosy i alkohole
+    protected String nazwa;
+    protected BigDecimal cena;
 
 
     public Produkt(String nazwa, BigDecimal cena) {
