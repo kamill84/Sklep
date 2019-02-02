@@ -20,6 +20,8 @@ public class Alkohol extends Produkt {  // dziedziczenie z klasy Produkt
 
     }
 
-
+public String getTyp(){
+        return "alko";
+}
 
 }

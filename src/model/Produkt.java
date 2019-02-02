@@ -2,7 +2,7 @@ package model;
 
 import java.math.BigDecimal;
 
-public class Produkt {
+public abstract class Produkt {
 
 
     private static  int generator=1;  // jedna zmienna w klasie dla wszystkich w klasie
@@ -22,10 +22,11 @@ public class Produkt {
     public int getId(){
         return id;}
 
+        public abstract String getTyp();
 
     public String toString(){
 
-        return this.id +"\t" + this.nazwa+"\t"+ this.cena +"  pln" ;
+        return this.id +"\t"+getTyp()+"\t"+ this.nazwa+"\t"+ this.cena +"  pln" ;
 
 
     }

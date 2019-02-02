@@ -19,5 +19,7 @@ public class Papierosy  extends Produkt {
 
     }
 
-
+    public String getTyp(){
+        return "papierosy";
+    }
 }

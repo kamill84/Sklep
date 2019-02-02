@@ -18,54 +18,33 @@ public class Sklep {
     }
 
     // dodanie alkoholu do sklepu
-    public void dodajAlkohol(Alkohol alkohol) {
-        alkohole.add(alkohol);  // dodanie do listy
-
-    }
-
-    public void dodajPapierosy(Papierosy papierosy) {
-       papieros.add(papierosy);  // dodanie do listy
+    public void dodajProdukt(Produkt produkt) {
+        produkty.add(produkt);  // dodanie do listy
 
     }
 
 
-
-    public void usunAlkohol(int id) {
+    public void usunProdukt(int id) {
            // usuniecie z listy
-            Iterator<Alkohol> iterator = alkohole.iterator();  // iterator zamiast pętli for,while
+            Iterator<Produkt> iterator = produkty.iterator();  // iterator zamiast pętli for,while
 
         while(iterator.hasNext()){   // petla dopoki sa elemnty na liscie
-            Alkohol alkohol = iterator.next();
-            if (alkohol.getId() == id){
+            Produkt produkt = iterator.next();
+            if (produkt.getId() == id){
                 iterator.remove();
             }
         }
     }
 
 
-    public void usunPapieros(int id) {
-        // usuniecie z listy
-        Iterator<Papierosy> iterator = papieros.iterator();  // iterator zamiast pętli for,while
 
-        while(iterator.hasNext()){   // petla dopoki sa elemnty na liscie
-            Papierosy papierosy = iterator.next();
-            if (papierosy.getId2() == id){
-                iterator.remove();
-            }
-        }
-    }
 
 
 
         public String toString() {
-            String rezultat = "id\tnazwa\tcena\n";
-            for (Alkohol alkohol : alkohole) {
-                rezultat += alkohol + "\n"; }  // mozna dodawac stringi
-
-                for (Papierosy papierosy : papieros) {
-                    rezultat += papierosy + "\n";   // mozna dodawac stringi
-
-            }
-            return rezultat;
+            String rezultat = "id\ttyp\tnazwa\tcena\n";
+            for (Produkt produkt : produkty) {
+                rezultat += produkt + "\n"; }  // mozna dodawac stringi
+                           return rezultat;
         }
 }

@@ -14,11 +14,11 @@ public class Menu {
         Sklep sklep = new Sklep("Alkohole w akademiku");  // utworzenie sklepu
 
 
-        System.out.println("1 - dodaj akohol ");
-        System.out.println("2 - usun alkohol ");
+        System.out.println("1 - dodaj alkohol ");
+        System.out.println("2 - usun Produkt ");
         System.out.println("3 - wyswietl ");
         System.out.println("4 - dodaj papierosy ");
-        System.out.println("5 - usun papierosy ");
+    //    System.out.println("5 - usun papierosy ");
         System.out.println("q - wyjscie ");
                     // TODO dodac opcje
 
@@ -54,7 +54,7 @@ public class Menu {
 
 
                 Alkohol Dodajemy = new Alkohol(nazwa,cena,litraz,procent);
-                sklep.dodajAlkohol(Dodajemy);
+                sklep.dodajProdukt(Dodajemy);
 
                 System.out.println("Dodano produkt alkoholowy");
 
@@ -65,8 +65,8 @@ public class Menu {
 
                 System.out.println(sklep);
                 int usun = wejscie.nextInt();
-                sklep.usunAlkohol(usun);
-                System.out.println(" usunieto alkohol");
+                sklep.usunProdukt(usun);
+                System.out.println(" usunieto ");
                          }
 
 
@@ -92,20 +92,20 @@ public class Menu {
 
 
                 Papierosy Dodajemy = new Papierosy(nazwa,cena,litraz,procent);
-                sklep.dodajPapierosy(Dodajemy);
+                sklep.dodajProdukt(Dodajemy);
 
                 System.out.println("Dodano produkt papierosy");
                 wejscie.nextLine();
             }
 
 
-            if (text.equals("5"))  {
+         //   if (text.equals("5"))  {
 
-                System.out.println(sklep);
-                int usun = wejscie.nextInt();
-                sklep.usunPapieros(usun);
-                System.out.println(" usunieto papierosy");
-            }
+           //     System.out.println(sklep);
+           //     int usun = wejscie.nextInt();
+           //     sklep.usunProdukt(usun);
+           //     System.out.println(" usunieto papierosy");
+          //  }
 
 
 
