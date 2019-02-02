@@ -12,7 +12,7 @@ public class Menu {
         System.out.println("2 - usun alkohol ");
         System.out.println("3 - wyswietl ");
         System.out.println("q - wyjscie ");
-
+                    // TODO dodac opcje
 
 
 
@@ -29,6 +29,7 @@ public class Menu {
 
             if (text.equals("1") ) {
                 System.out.println("Dodaj");
+
             }
 
 
