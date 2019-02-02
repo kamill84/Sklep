@@ -28,10 +28,15 @@ public class Alkohol {
     }
 
     public int getId(){
+        return id;}
 
 
-        return id;
-}
+        public String toString(){
+
+                return this.nazwa+" cena :  "+ this.cena +"  pln" ;
+
+
+        }
 
 
 }

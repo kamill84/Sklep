@@ -35,10 +35,12 @@ public class Sklep {
         }
     }
 
-    public void wyswietl(Alkohol alkohol) {
+    public void wyswietl() {
 
-        System.out.println(alkohole);  // dodanie do listy
-
+         int id = alkohole.size();
+        for (int i =0; i< id;i++) {
+            System.out.println(alkohole.get(i));  // wyswietlenie listy
+        }
     }
 
 
