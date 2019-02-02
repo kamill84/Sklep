@@ -7,13 +7,13 @@ import java.util.List;
 public class Sklep {
 
     private String nazwa;
-    private List<Alkohol> alkohole;
+    private List<Produkt> produkty;
+
 
     // konstruktr tworzy pusty sklep ->
     public Sklep(String nazwa) {
         this.nazwa = nazwa;
-        this.alkohole = new ArrayList<>();
-
+        this.produkty = new ArrayList<>();
 
     }
 
@@ -22,6 +22,13 @@ public class Sklep {
         alkohole.add(alkohol);  // dodanie do listy
 
     }
+
+    public void dodajPapierosy(Papierosy papierosy) {
+       papieros.add(papierosy);  // dodanie do listy
+
+    }
+
+
 
     public void usunAlkohol(int id) {
            // usuniecie z listy
@@ -35,13 +42,30 @@ public class Sklep {
         }
     }
 
-    public void wyswietl() {
 
-         int id = alkohole.size();
-        for (int i =0; i< id;i++) {
-            System.out.println(alkohole.get(i));  // wyswietlenie listy
+    public void usunPapieros(int id) {
+        // usuniecie z listy
+        Iterator<Papierosy> iterator = papieros.iterator();  // iterator zamiast pętli for,while
+
+        while(iterator.hasNext()){   // petla dopoki sa elemnty na liscie
+            Papierosy papierosy = iterator.next();
+            if (papierosy.getId2() == id){
+                iterator.remove();
+            }
         }
     }
 
 
+
+        public String toString() {
+            String rezultat = "id\tnazwa\tcena\n";
+            for (Alkohol alkohol : alkohole) {
+                rezultat += alkohol + "\n"; }  // mozna dodawac stringi
+
+                for (Papierosy papierosy : papieros) {
+                    rezultat += papierosy + "\n";   // mozna dodawac stringi
+
+            }
+            return rezultat;
+        }
 }

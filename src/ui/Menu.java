@@ -1,6 +1,7 @@
 package ui;
 
 import model.Alkohol;
+import model.Papierosy;
 import model.Sklep;
 
 import java.math.BigDecimal;
@@ -16,6 +17,8 @@ public class Menu {
         System.out.println("1 - dodaj akohol ");
         System.out.println("2 - usun alkohol ");
         System.out.println("3 - wyswietl ");
+        System.out.println("4 - dodaj papierosy ");
+        System.out.println("5 - usun papierosy ");
         System.out.println("q - wyjscie ");
                     // TODO dodac opcje
 
@@ -53,30 +56,67 @@ public class Menu {
                 Alkohol Dodajemy = new Alkohol(nazwa,cena,litraz,procent);
                 sklep.dodajAlkohol(Dodajemy);
 
-                System.out.println("Dodano produkt");
+                System.out.println("Dodano produkt alkoholowy");
 
             }
 
 
             if (text.equals("2"))  {
-                System.out.println("Usun");
-            }
+
+                System.out.println(sklep);
+                int usun = wejscie.nextInt();
+                sklep.usunAlkohol(usun);
+                System.out.println(" usunieto alkohol");
+                         }
 
 
             if ( text.equals("3")) {
               //  System.out.println("Wyswietl");
-                sklep.wyswietl();
+                System.out.println(sklep);
             }
+
+            if (text.equals("4") ) {
+
+                System.out.print("Nazwa papierosow : ");
+                String nazwa = wejscie.nextLine();
+
+                System.out.print("Cena papierosow : ");
+                BigDecimal cena = wejscie.nextBigDecimal();
+                wejscie.nextLine();   // enter z bufora !!
+
+                System.out.print("Podaj rodzaj : ");
+                String litraz = wejscie.nextLine();
+
+                System.out.print("Podaj ilosc : ");
+                int procent = wejscie.nextInt();
+
+
+                Papierosy Dodajemy = new Papierosy(nazwa,cena,litraz,procent);
+                sklep.dodajPapierosy(Dodajemy);
+
+                System.out.println("Dodano produkt papierosy");
+                wejscie.nextLine();
+            }
+
+
+            if (text.equals("5"))  {
+
+                System.out.println(sklep);
+                int usun = wejscie.nextInt();
+                sklep.usunPapieros(usun);
+                System.out.println(" usunieto papierosy");
+            }
+
 
 
             if ( text.equals("q")) {
-                System.out.println("Koniec programu ");
+                System.out.println(" Koniec programu ");
             }
 
 
-            if ( !text.equals("1") && !text.equals("2") &&  !text.equals("3") && !text.equals("q")  ) {
-                System.out.println("Nieznana komenda ");
-            }
+          //  if ( !text.equals("1") && !text.equals("2") &&  !text.equals("3") && !text.equals("q")  ) {
+          //      System.out.println("Nieznana komenda ");
+          //  }
 
         }
     }
