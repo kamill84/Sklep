@@ -1,5 +1,6 @@
 package ui;
 
+import io.PlikiBinarne;
 import model.Alkohol;
 import model.Papierosy;
 import model.Sklep;
@@ -11,9 +12,18 @@ public class Menu {
 
     public void wyswietl(){
         Scanner wejscie = new Scanner(System.in);
-        Sklep sklep = new Sklep("Alkohole w akademiku");  // utworzenie sklepu
+       // Sklep sklep = new Sklep("Alkohole w akademiku");  // utworzenie sklepu
 
+        PlikiBinarne pliki = new PlikiBinarne();
+        Sklep sklep = null;
+        try {
+            sklep = pliki.odczyt();
+        }catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Nie udalo sie wczytac sklepu");
+            sklep = new Sklep("Alkohole w akademiku");
 
+        }
         System.out.println("1 - dodaj alkohol ");
         System.out.println("2 - usun Produkt ");
         System.out.println("3 - wyswietl ");
@@ -91,8 +101,8 @@ public class Menu {
                 int procent = wejscie.nextInt();
 
 
-                Papierosy Dodajemy = new Papierosy(nazwa,cena,litraz,procent);
-                sklep.dodajProdukt(Dodajemy);
+                Papierosy Dodajemy2 = new Papierosy(nazwa,cena,litraz,procent);
+                sklep.dodajProdukt(Dodajemy2);
 
                 System.out.println("Dodano produkt papierosy");
                 wejscie.nextLine();
@@ -110,6 +120,7 @@ public class Menu {
 
 
             if ( text.equals("q")) {
+                pliki.zapis(sklep);
                 System.out.println(" Koniec programu ");
             }
 
