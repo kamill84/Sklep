@@ -1,0 +1,12 @@
+{
+  "nazwa" : "Alkohole w akademiku",
+  "produkty" : [ {
+    "type" : "alkohol",
+    "id" : 1,
+    "nazwa" : "piwo",
+    "cena" : 23,
+    "litraz" : "2",
+    "procentAlkoholu" : "2",
+    "typ" : "alko"
+  } ]
+}
